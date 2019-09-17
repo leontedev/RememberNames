@@ -1,0 +1,19 @@
+* Remember Names & Faces
+
+Project 10 - Days 42-44 - [[https://www.hackingwithswift.com/100]]
+
+Import photos of people & put a name to the face.
+
+** Day 42
+ - UICollectionView
+ - Custom Cell class - and casting when dequeuing:
+#+BEGIN_SRC Swift
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Person", for: indexPath) as? PersonCell else {
+            fatalError("Unable to dequeue a Person cell.")
+        }
+        
+        return cell
+    }
+#+END_SRC
+[[day42.png]]
