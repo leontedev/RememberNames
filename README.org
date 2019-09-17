@@ -17,3 +17,26 @@ Import photos of people & put a name to the face.
     }
 #+END_SRC
 [[day42.png]]
+** Day 43
+ - Added a UIImagePickerController():
+#+BEGIN_SRC Swift
+        let picker = UIImagePickerController()
+        picker.allowsEditing = true // the user can crop the picture
+        picker.delegate = self
+        present(picker, animated: true)
+#+END_SRC
+ - Conforming to UIImagePickerControllerDelegate, UINavigationControllerDelegate
+ - Delegate method: didFinishPickingMediaWithInfo
+It returns a dictionary, with keys for .editedImage:
+#+BEGIN_SRC Swift
+guard let image = info[.editedImage] as? UIImage else { return }
+#+END_SRC
+ - Generate a UUID().uuidString
+ - getDocumentsDirectory()
+#+BEGIN_SRC Swift
+    func getDocumentsDirectory() -> URL {
+        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return path[0]
+    }
+#+END_SRC
+- Convert UIImage to jpeg and write it to disk
