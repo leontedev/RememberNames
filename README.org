@@ -39,4 +39,6 @@ guard let image = info[.editedImage] as? UIImage else { return }
         return path[0]
     }
 #+END_SRC
-- Convert UIImage to jpeg and write it to disk
+ - Convert UIImage to jpeg and write it to disk
+ - Implemented a data structure to hold the person name and the image file name. Modified the Data Source methods to show the proper data.
+ - Added a Alert Controller with a text field to modify the person's name when the cell is tapped.
