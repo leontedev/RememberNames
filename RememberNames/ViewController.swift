@@ -22,6 +22,11 @@ class ViewController: UICollectionViewController, UIImagePickerControllerDelegat
         let picker = UIImagePickerController()
         picker.allowsEditing = true // the user can crop the picture
         picker.delegate = self
+        
+        // Day 44 - Challenge 2 - use the camera to take a photo
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            picker.sourceType = .camera
+        }
         present(picker, animated: true)
     }
     
